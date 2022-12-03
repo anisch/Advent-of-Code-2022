@@ -2,20 +2,19 @@ fun findMatch(s1: String, s2: String): Char {
     for (c in 'A'..'z') {
         if (c in s1 && c in s2) return c
     }
-    return error("wtf???")
+    error("wtf???")
 }
 
 fun findMatch(s1: String, s2: String, s3: String): Char {
     for (c in 'A'..'z') {
         if (c in s1 && c in s2 && c in s3) return c
     }
-    return error("wtf???")
+    error("wtf???")
 }
 
-fun getPriority(c: Char): Int {
-    return if (c.isLowerCase()) c - 'a' + 1
+fun getPriority(c: Char): Int =
+    if (c.isLowerCase()) c - 'a' + 1
     else c - 'A' + 27
-}
 
 fun main() {
     fun part1(input: List<String>): Int {
