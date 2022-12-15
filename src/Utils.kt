@@ -14,3 +14,13 @@ fun readInput(name: String) = File("src", "$name.txt")
 fun String.md5() = BigInteger(1, MessageDigest.getInstance("MD5").digest(toByteArray()))
     .toString(16)
     .padStart(32, '0')
+
+data class Vec(val x: Int, val y: Int) {
+    operator fun minus(o: Vec): Vec {
+        return Vec(x - o.x, y - o.y)
+    }
+
+    operator fun plus(o: Vec): Vec {
+        return Vec(x + o.x, y + o.y)
+    }
+}

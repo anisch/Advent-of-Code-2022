@@ -51,7 +51,7 @@ fun inspection(monkeys: List<Monkey>, divider: Long, monkeyMod: Long? = null) {
 fun main() {
     fun part1(input: List<String>): Long {
         val monkeys = getMonkeys(input)
-        repeat(20) { inspection(monkeys, 3, null) }
+        repeat(20) { inspection(monkeys, 3) }
 
         val (a, b) = monkeys.sortedByDescending { m -> m.inspectCounter }
         return a.inspectCounter * b.inspectCounter

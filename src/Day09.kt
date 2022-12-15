@@ -1,19 +1,9 @@
 import kotlin.math.abs
 
-data class Vec(val x: Int, val y: Int) {
-    operator fun minus(o: Vec): Vec {
-        return Vec(x - o.x, y - o.y)
-    }
-
-    operator fun plus(o: Vec): Vec {
-        return Vec(x + o.x, y + o.y)
-    }
-}
-
-fun Vec.isTouching(o: Vec): Boolean =
+private fun Vec.isTouching(o: Vec): Boolean =
     abs(x - o.x) <= 1 && abs(y - o.y) <= 1
 
-fun Vec.move(dir: String): Vec = when (dir) {
+private fun Vec.move(dir: String): Vec = when (dir) {
     "U" -> Vec(x, y + 1)
     "D" -> Vec(x, y - 1)
     "L" -> Vec(x - 1, y)

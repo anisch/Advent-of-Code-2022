@@ -1,5 +1,5 @@
 fun getSignalStrength(cycles: Int, registerX: Int) =
-    if (cycles == 20 || (cycles - 20) % 40 == 0) cycles * registerX
+    if (cycles  % 40 == 20) cycles * registerX
     else 0
 
 fun main() {
